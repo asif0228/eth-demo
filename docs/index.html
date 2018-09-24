@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My Coin</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/web3.min.js"></script>
+  <script src="js/truffle-contract.min.js"></script>
+  <style type="text/css">
+    .card{
+      font-size: 20px;
+      font-weight: 900;
+      border: 2px solid black;
+      padding: 3%;
+    }
+  </style>
+</head>
+<body>
+
+<div id="loading" class="container">
+  <div class="row">
+    <div class="col-sm-12 text-center"><h2><kbd>LOADING ...</kbd></h2></div>
+  </div>
+</div>
+
+
+<div id="content" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 text-center"><h2><kbd id="wallet">Wallet: </kbd></h2></div>
+    <div class="col-sm-12 text-center"><h2><kbd id="coin">0 MyCoin</kbd></h2></div>
+    <div class="col-sm-12 text-left">
+      <kbd>Request Coin</kbd>
+      <input id="num_of_coin" type="number" class="form-control" placeholder="Number of Coin" />
+      <button onclick="requestCoin()" class="btn btn-block btn-success">Request Coin</button>
+    </div>
+    <div class="col-sm-12 text-left"><hr/></div>
+    <div class="col-sm-12 text-left">
+      <kbd>Address</kbd>
+      <input id="address" type="text" class="form-control" placeholder="Address" />
+      <kbd>Coin</kbd>
+      <input id="coin_to_transfer" type="number" class="form-control" placeholder="Number of Coin" />
+      <button onclick="transferCoin()" class="btn btn-block btn-success">Transfer Coin</button>
+    </div>
+  </div>
+  <hr/>
+  <hr/>
+  <div class="row table-responsive">
+    <div class="col-sm-6">
+      <table id="pending" class="table table-bordered">
+        <thead>
+          <tr>
+            <th colspan="3" class="warning">PENDING</th>
+          </tr>
+          <tr>
+            <th>TxnId</th>
+            <th>ADDRESS</th>
+            <th>VALUE</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    </div>
+    <div class="col-sm-6">
+      <table id="transfer" class="table table-bordered">
+        <thead>
+          <tr>
+            <th colspan="4" class="info">TRANSFER</th>
+          </tr>
+          <tr>
+            <th>TxnId</th>
+            <th>FROM</th>
+            <th>TO</th>
+            <th>VALUE</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    </div>
+    <div class="col-sm-6">
+      <table id="accepted" class="table table-bordered">
+        <thead>
+          <tr>
+            <th colspan="3" class="success">ACCEPTED</th>
+          </tr>
+          <tr>
+            <th>TxnId</th>
+            <th>ADDRESS</th>
+            <th>VALUE</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    </div>
+    <div class="col-sm-6">
+      <table id="rejected" class="table table-bordered">
+        <thead>
+          <tr>
+            <th colspan="3" class="danger">REJECTED</th>
+          </tr>
+          <tr>
+            <th>TxnId</th>
+            <th>ADDRESS</th>
+            <th>VALUE</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+<script src="js/app.js"></script>
