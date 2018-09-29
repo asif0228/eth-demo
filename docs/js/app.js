@@ -106,9 +106,9 @@ function transferCoin(){
   console.log(to);
 
   var coin = $("#num_of_coin").val();
-  //App.myCoin.transferCoin(coin,to).then(function(){
-  //  location.reload();
-  //});
+  App.myCoin.transferCoin(coin,to).then(function(){
+    location.reload();
+  });
 }
 
 function acceptRequest(_no){
